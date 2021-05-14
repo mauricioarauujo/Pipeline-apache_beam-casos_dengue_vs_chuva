@@ -36,7 +36,7 @@ dengue = (
 chuvas = (
     pipeline
     | "Leitura do dataset de chuvas" >>
-        ReadFromParquet('chuvas.parquet', skip_header_lines=1)
+        ReadFromParquet('chuvas.parquet')
     | "Chuvas - de texto para lista" >>
         beam.Map(texto_para_lista, delimitador = ',')
     | 'Chuvas - Criar chave uf_ano_mes' >>
