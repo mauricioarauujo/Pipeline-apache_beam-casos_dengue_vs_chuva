@@ -1,6 +1,8 @@
 __pycache__/
 chuvas.csv
 env-beam/
-analise.ipynb
+transf.ipynb
 beam-temp-final-134b6b40b41811eba646af77d2fdefc2/
-testing_pipeline.py
+seeing_pipeline.py
+sample_casos_dengue.txt
+sample_chuvas.csv
