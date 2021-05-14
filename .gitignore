@@ -3,6 +3,8 @@ chuvas.csv
 env-beam/
 transf.ipynb
 beam-temp-final-134b6b40b41811eba646af77d2fdefc2/
-seeing_pipeline.py
 sample_casos_dengue.txt
 sample_chuvas.csv
+sample_chuvas.parquet
+seeing_chuva.py
+seeing_dengue.py

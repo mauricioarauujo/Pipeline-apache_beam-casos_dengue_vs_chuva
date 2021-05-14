@@ -56,13 +56,12 @@ def chave_uf(elemento):
 
 def chuva_chave_uf_ano_mes_lista(elemento):
     """
-    Recebe uma lista de elementos ['2016-01-04', '4.2', 'TO'] e retorna uma tupla contendo uma chave e o valor de chuva em mm
+    Recebe um dicionario de elementos {'data': '2015-01-31', 'mm': 0.0, 'uf': 'CE'} e retorna uma tupla contendo uma chave e o valor de chuva em mm
     ('UF-ANO-MES', '1.3')
     """
 
-    data, mm, uf = elemento
-    mm = float(mm)
-
+    data, mm, uf = elemento['data'], elemento['mm'], elemento['uf']
+    
     if mm < 0: mm = 0
 
     ano_mes = '-'.join(data.split('-')[:2])

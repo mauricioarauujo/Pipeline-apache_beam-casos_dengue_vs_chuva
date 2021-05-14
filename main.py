@@ -36,17 +36,15 @@ dengue = (
 chuvas = (
     pipeline
     | "Leitura do dataset de chuvas" >>
-        ReadFromParquet('chuvas.parquet')
-    | "Chuvas - de texto para lista" >>
-        beam.Map(texto_para_lista, delimitador = ',')
+        ReadFromParquet('chuvas.parquet')    
+        
     | 'Chuvas - Criar chave uf_ano_mes' >>
-         beam.Map(chuva_chave_uf_ano_mes_lista)
+        beam.Map(chuva_chave_uf_ano_mes_lista)
     | 'Chuvas - Soma dos mm pela chave' >>
         beam.CombinePerKey(sum)
     | 'Chuvas - Arredondar resultados' >>
         beam.Map(arredonda)
-#    | "Chuvas - Mostrar resultados" >> beam.Map(print)
-
+    #| "Chuvas teste - Mostrar resultados" >> beam.Map(print)
 )
 
 final = (
