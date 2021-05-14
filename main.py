@@ -1,6 +1,6 @@
 import apache_beam as beam
 from apache_beam.io import ReadFromText
-from apache_beam.io.parquetio import ReadFromParquet
+from apache_beam.io import ReadFromParquet
 from apache_beam.io.parquetio import WriteToParquet
 from apache_beam.io.textio import WriteToText
 from apache_beam.options.pipeline_options import PipelineOptions
@@ -36,8 +36,7 @@ dengue = (
 chuvas = (
     pipeline
     | "Leitura do dataset de chuvas" >>
-        ReadFromParquet('chuvas.parquet')    
-        
+        ReadFromParquet('chuvas.parquet')           
     | 'Chuvas - Criar chave uf_ano_mes' >>
         beam.Map(chuva_chave_uf_ano_mes_lista)
     | 'Chuvas - Soma dos mm pela chave' >>
