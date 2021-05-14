@@ -2,5 +2,5 @@ Um projeto básico e simples de um pipeline de dados feito com apache_beam para 
 
 inputs: arquivos "chuvas.csv" e "casos_dengue.txt"
 
-output: arquivo tratado "final-0000-of-00001.csv"
+output: arquivo tratado "final.csv"
 
